@@ -1,4 +1,4 @@
-﻿(function (factory, window, $, undefined) {
+﻿(function (factory, window, undefined) {
 	"use strict";
 
 	factory.createURL = function(baseURL) {
@@ -16,4 +16,4 @@
 
 		return url;
 	}
-})(urlFactory = window.urlFactory || {}, window, jQuery);
+})(urlFactory = window.urlFactory || {}, window);
