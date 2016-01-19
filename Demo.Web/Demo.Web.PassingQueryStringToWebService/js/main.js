@@ -1,11 +1,11 @@
 ﻿(function() {
 	"use strict";
 
-	var url = "Services/ContextWebService.asmx/GetContext" + window.location.search;
+	var serviceURL = urlFactory.createURL("Services/ContextWebService.asmx/GetContext/");
 
-	$.ajax({
+	 $.ajax({
 		type: "GET",
-		url: url,
+		url: serviceURL,
 		contentType: "application/json; charset=utf-8",
 		data: "",
 		dataType: "json",
