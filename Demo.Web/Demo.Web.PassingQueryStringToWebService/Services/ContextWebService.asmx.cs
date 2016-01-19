@@ -20,7 +20,7 @@ namespace Demo.Web.PassingQueryStringToWebService.Services
 		{
 			var login = new
 			{
-				Login = GetLogin(HttpContext.Current),
+				login = GetLogin(HttpContext.Current),
 				db = GetDbFromQueryString(HttpContext.Current)
 			};
 			return JsonConvert.SerializeObject(login);

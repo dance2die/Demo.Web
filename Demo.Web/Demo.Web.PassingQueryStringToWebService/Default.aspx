@@ -5,6 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 	<title></title>
+	
+	<link href="Content/alertify/alertify.core.css" rel="stylesheet" />
+	<link href="Content/alertify/alertify.default.css" rel="stylesheet" />
+	<link href="Content/alertify/alertify.bootstrap.css" rel="stylesheet" />
+
 	<script src="Scripts/jquery-2.2.0.js"></script>
 </head>
 <body>
@@ -13,25 +18,8 @@
 		</div>
 	</form>
 	
-	<script>
-		"use strict";
-
-		var url = "Services/ContextWebService.asmx/GetContext" + window.location.search;
-
-		$.ajax({
-			type: "GET",
-			url: url,
-			contentType: "application/json; charset=utf-8",
-			data: "",
-			dataType: "json",
-			success: function (data) {
-				var result = $.parseJSON(data.d);
-				console.log(result);
-			}, error: function (error) {
-				alert(error.statusText);
-			}
-		});
-
-	</script>
+	<script src="Scripts/alertify/alertify.min.js"></script>
+	<script src="js/urlFactory.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
