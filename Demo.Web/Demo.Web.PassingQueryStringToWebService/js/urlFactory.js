@@ -1,7 +1,7 @@
 ﻿(function (factory, window, undefined) {
 	"use strict";
 
-	factory.appendQueryString = function(baseURL) {
+	factory.formatURL = function(baseURL) {
 		return dropLastSlash(baseURL) + window.location.search;
 	}
 
