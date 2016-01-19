@@ -2,16 +2,15 @@
 	"use strict";
 
 	factory.createURL = function(baseURL) {
-		return resolveURL(baseURL) + window.location.search;
+		return dropLastSlash(baseURL) + window.location.search;
 	}
 
-	// partially copied from http://weblogs.asp.net/joelvarty/resolveurl-in-javascript
-	function resolveURL(url) {
-		if (url.indexOf("~/") == 0) {
-			url = baseUrl + url.substring(2);
-		}
-
+	function dropLastSlash(url) {
+		// "url.slice(-1)" returns last character in a string
+		// e.g.) "abc".slice(-1) returns "c"
 		if (url.slice(-1) === "/") {
+			// "url.slice(0, -1)" returns a string except last character
+			// e.g.) "abc".slice(0, -1) returns "ab"
 			url = url.slice(0, -1);
 		}
 
