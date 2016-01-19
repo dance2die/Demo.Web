@@ -1,7 +1,7 @@
 ﻿(function() {
 	"use strict";
 
-	var serviceURL = urlFactory.createURL("Services/ContextWebService.asmx/GetContext/");
+	var serviceURL = urlFactory.appendQueryString("Services/ContextWebService.asmx/GetContext/");
 
 	 $.ajax({
 		type: "GET",
