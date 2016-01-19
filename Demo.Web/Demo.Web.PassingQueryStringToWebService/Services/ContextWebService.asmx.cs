@@ -15,7 +15,7 @@ namespace Demo.Web.PassingQueryStringToWebService.Services
 	{
 
 		[WebMethod]
-		[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+		[ScriptMethod(ResponseFormat = ResponseFormat.Json, UseHttpGet = true)]
 		public string GetContext()
 		{
 			var login = new
