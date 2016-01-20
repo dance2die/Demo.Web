@@ -1,7 +1,8 @@
 ﻿(function() {
 	"use strict";
 
-	var serviceURL = urlFactory.formatURL("Services/ContextWebService.asmx/GetContext/");
+	//var serviceURL = urlFactory.formatURL("Services/ContextWebService.asmx/GetContext/");
+	var serviceURL = "Services/ContextWebService.asmx/GetContext";
 
 	 $.ajax({
 		type: "GET",
@@ -14,6 +15,7 @@
 			console.log(result);
 			alertify.log(result.login);
 			alertify.log(result.db);
+			alertify.log(result.c);
 		}, error: function (error) {
 			alert(error.statusText);
 		}
