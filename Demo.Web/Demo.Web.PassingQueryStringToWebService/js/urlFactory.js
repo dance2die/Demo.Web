@@ -1,8 +1,25 @@
-﻿(function (factory, window, undefined) {
+﻿(function (urlFactory, window, undefined) {
 	"use strict";
 
-	factory.formatURL = function(baseURL) {
+	urlFactory.formatURL = function(baseURL) {
 		return dropLastSlash(baseURL) + window.location.search;
+	}
+
+	urlFactory.getDBQueryStringValue = function () {
+		return getParameterByName("db");
+	}
+
+	urlFactory.getDBQueryString = function () {
+		return "db=" + urlFactory.getDBQueryStringValue();
+	}
+
+	// http://stackoverflow.com/a/901144/4035
+	// Modified a bit: ignores case sensitivity (refer to new RegEx flag)
+	function getParameterByName(parameterName) {
+		parameterName = parameterName.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + parameterName + "=([^&#]*)", "i"),
+			results = regex.exec(location.search);
+		return results == null ? "" : decodeURIComponent(results[1].replace(/\+/gi, " "));
 	}
 
 	function dropLastSlash(url) {
